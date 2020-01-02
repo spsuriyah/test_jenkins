@@ -20,7 +20,7 @@
                 sh 'mvn --version'
                 sh 'mvn clean install'
                 sh 'pwd'
-                sh 'scp ./target/java-hello-world.war ec2-user@13.127.191.235:/home/ec2-user/'
+                sh 'scp -i "ssh_connect" /target/java-hello-world.war ec2-user@13.127.191.235:/home/ec2-user/'
            }
           }
         }
