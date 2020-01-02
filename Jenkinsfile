@@ -1,14 +1,12 @@
   pipeline {
-    node {
-     checkout scm
-    }
-    options {
-      timestamps()
-    }
-    stages {
-       stage('deploy') {
+    agent any
+      options {
+        timestamps()
+      }
+      stages {
+       stage('clonesources') {
            steps {
-                sh 'echo $HOME'
+                git url: 'https://github.com/spsuriyah/test_jenkins.git'
               }
             }
           }
