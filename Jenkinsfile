@@ -1,7 +1,12 @@
   pipeline {
     agent any
       options {
-        timestamps()
+      disableConcurrentBuilds()
+      timestamps()
+      buildDiscarder(logRotator(numToKeepStr: '10'))
+      }
+      tools {
+        maven 'M3'
       }
       stages {
        stage('clonesources') {
@@ -9,5 +14,10 @@
                 git url: 'https://github.com/spsuriyah/test_jenkins.git'
               }
             }
+       stage('build') {
+           steps {
+                sh 'mvn --version'
+           }
           }
+        }
        }   
