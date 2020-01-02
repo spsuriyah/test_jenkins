@@ -6,7 +6,7 @@
       buildDiscarder(logRotator(numToKeepStr: '10'))
       }
       tools {
-        maven 'apache-maven-3.0.1'
+        maven 'maven_3.6.3'
       }
       stages {
        stage('clonesources') {
