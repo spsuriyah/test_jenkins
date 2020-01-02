@@ -15,8 +15,8 @@
               }
             }
        stage('build') {
-           steps {
-                sshagent(credentials : ['ssh_connect'])
+           steps 
+                sshagent(credentials : ['ssh_connect']) {
                 sh 'mvn --version'
                 sh 'mvn clean install'
                 sh 'pwd'
