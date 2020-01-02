@@ -5,8 +5,10 @@
       }
       stages {
        stage('Checkout') {
-          checkout scm
+          steps {
+            checkout scm
         } 
+      }
        stage('deploy') {
            steps {
                 sh 'echo $HOME'
